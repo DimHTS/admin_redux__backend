@@ -2,10 +2,10 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "mocha *.test.js",
-    "start": "nodemon server.js"
+    "start": "nodemon index.js"
   },
   "author": "Dim",
   "license": "ISC",
