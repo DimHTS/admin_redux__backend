@@ -21,9 +21,13 @@ app.use((req, res, next) => {
 
 
 
+
+
 app.get("/", function (req, res) {
   res.send('Dim heroku example - admin_redux__backend');
 });
+
+
 
 
 
@@ -53,13 +57,13 @@ function ensureToken(req, res, next) {
 
   next();
 
-  // var tokenReq = String(req.headers["authorization"]);
-  // var tokenSaved = String(fs.readFileSync("./api/token.txt", "utf8"));
-  // if (tokenReq === tokenSaved) {
-  //   next();
-  // } else {
-  //   res.sendStatus(403);
-  // }
+  var tokenReq = String(req.headers["authorization"]);
+  var tokenSaved = String(fs.readFileSync("./api/token.txt", "utf8"));
+  if (tokenReq === tokenSaved) {
+    next();
+  } else {
+    res.sendStatus(403);
+  }
 }
 
 //END AUTHENTICATION
