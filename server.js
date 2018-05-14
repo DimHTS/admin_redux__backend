@@ -44,13 +44,16 @@ app.post("/api/authentication", jsonParser, function (req, res) {
 
 
 function ensureToken(req, res, next) {
-  var tokenReq = String(req.headers["authorization"]);
-  var tokenSaved = String(fs.readFileSync("./api/token.txt", "utf8"));
-  if (tokenReq === tokenSaved) {
+	
     next();
-  } else {
-    res.sendStatus(403);
-  }
+	
+//  var tokenReq = String(req.headers["authorization"]);
+//  var tokenSaved = String(fs.readFileSync("./api/token.txt", "utf8"));
+//  if (tokenReq === tokenSaved) {
+//    next();
+//  } else {
+//    res.sendStatus(403);
+//  }
 }
 
 //END AUTHENTICATION
