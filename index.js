@@ -54,9 +54,6 @@ app.post("/api/authentication", jsonParser, function (req, res) {
 
 
 function ensureToken(req, res, next) {
-
-  next();
-
   var tokenReq = String(req.headers["authorization"]);
   var tokenSaved = String(fs.readFileSync("./api/token.txt", "utf8"));
   if (tokenReq === tokenSaved) {
@@ -65,6 +62,7 @@ function ensureToken(req, res, next) {
     res.sendStatus(403);
   }
 }
+
 
 //END AUTHENTICATION
 
