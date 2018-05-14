@@ -21,6 +21,20 @@ app.use((req, res, next) => {
 
 
 
+
+
+
+
+app.get("/get", function (req, res) {
+  res.send('Dim get test');
+});
+
+
+
+
+
+
+
 //AUTHENTICATION
 app.post("/api/authentication", jsonParser, function (req, res) {
 
