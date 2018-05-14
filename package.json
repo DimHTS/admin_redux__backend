@@ -1,0 +1,24 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha *.test.js",
+    "start": "nodemon server.js"
+  },
+  "author": "Dim",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "fs-extra": "^5.0.0",
+    "jsonwebtoken": "^8.2.1",
+    "node-uuid": "^1.4.8"
+  },
+  "devDependencies": {
+    "mocha": "^5.1.1",
+    "supertest": "^3.0.0"
+  }
+}
