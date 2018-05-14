@@ -21,17 +21,9 @@ app.use((req, res, next) => {
 
 
 
-
-
-
-
 app.get("/", function (req, res) {
-  res.send('Dim get test');
+  res.send('Dim heroku example - admin_redux__backend');
 });
-
-
-
-
 
 
 
@@ -299,7 +291,7 @@ app.delete("/api/pages/:id", ensureToken, function (req, res) {
 //END PAGES
 
 
-app.listen(3002, function () {
-  console.log("http://localhost:3002/api/users");
+var port = process.env.PORT || 5000;
+app.listen(port, function () {
+  console.log("Listening on " + port);
 });
-
