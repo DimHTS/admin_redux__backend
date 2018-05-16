@@ -1,7 +1,6 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var fs = require("fs");
-var history = require('connect-history-api-fallback');
 
 var jwt = require('jsonwebtoken');
 
@@ -10,8 +9,8 @@ var cors = require('cors');  // позволяет конектиться с у�
 
 var jsonParser = bodyParser.json();
 
+
 app.use(cors());
-app.use(history()); // для корректной работы внутренних страниц SPA, иначе при входе выдает 404
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
