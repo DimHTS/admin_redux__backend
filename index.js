@@ -194,7 +194,7 @@ app.get("/api/pages", ensureToken, function (req, res) {
   var pages = JSON.parse(data);
   setTimeout(() => {
     res.send(pages);
-  }, 800)
+  }, 1)
 });
 
 // добавление страницы
