@@ -1,14 +1,14 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var fs = require("fs");
-
 var jwt = require('jsonwebtoken');
-
 var app = express();
 var cors = require('cors');  // позволяет конектиться с удаленного сервера
 
-var jsonParser = bodyParser.json();
+var config = require("./config");
 
+
+var jsonParser = bodyParser.json();
 
 app.use(cors());
 app.use(express.static(__dirname + "/public"));
@@ -296,7 +296,7 @@ app.delete("/api/pages/:id", ensureToken, function (req, res) {
 //END PAGES
 
 
-var port = process.env.PORT || 5000;
+var port = process.env.PORT || config.port;
 app.listen(port, function () {
   console.log("Listening on " + port);
 });

@@ -1,7 +1,9 @@
 var request = require("supertest");
 // var express = require("express");
 
-var server = request.agent('http://localhost:3002');
+var config = require("./config");
+
+var server = request.agent('http://localhost:'+ config.port);
 
 // var app = require("./server").app;      <<<===
 // it('get users', function (done) {  
