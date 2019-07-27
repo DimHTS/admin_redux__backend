@@ -6,7 +6,7 @@ var app = express();
 var cors = require('cors');  // позволяет конектиться с удаленного сервера
 
 var config = require("./config");
-
+var getUsers = require("./controllers/users");
 
 var jsonParser = bodyParser.json();
 
@@ -54,6 +54,7 @@ app.post("/api/authentication", jsonParser, function (req, res) {
 });
 
 
+//function checkToken(req, res, next) {   заменить имя
 function ensureToken(req, res, next) {
   next()
 
@@ -78,11 +79,9 @@ function ensureToken(req, res, next) {
 
 var urlUsers = "./api/usersData.json";
 
-app.get("/api/users", ensureToken, function (req, res) {
-  var data = fs.readFileSync(urlUsers, "utf8");
-  var users = JSON.parse(data);
-  res.send(users);
-});
+
+app.use('/api', ensureToken, getUsers);
+
 
 // добавление пользователя
 app.post("/api/users", ensureToken, jsonParser, function (req, res) {
