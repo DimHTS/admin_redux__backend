@@ -19,7 +19,7 @@
     "node-uuid": "^1.4.8"
   },
   "devDependencies": {
-    "mocha": "^5.1.1",
+    "mocha": "^10.2.0",
     "supertest": "^3.0.0"
   }
 }
